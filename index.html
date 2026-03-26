@@ -1,0 +1,2428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Aignite Tech Solutions Hub — Training Youth to Acquire Digital Skills
+    </title>
+    <meta
+      name="description"
+      content="Aignite is a Tech Education & Outsourcing Hub in Winneba, Ghana — training youth in globally competitive digital skills and connecting them to remote work opportunities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ══════════════════════════════════════════════════════
+       AIGNITE TECH SOLUTIONS HUB — Landing Page Styles
+       Brand Colors from official logo:
+       Navy #1A3A5C · Blue #2968A3 · Cyan #29ABE2 · Orange #F5841F
+       ══════════════════════════════════════════════════════ */
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --navy: #1a3a5c;
+        --navy-dark: #0f2440;
+        --blue: #2968a3;
+        --cyan: #29abe2;
+        --cyan-light: #7dd3fc;
+        --orange: #f5841f;
+        --orange-light: #fdba74;
+        --orange-dark: #d96f12;
+        --dark: #111827;
+        --dark-2: #0f172a;
+        --gray-900: #1e293b;
+        --gray-700: #374151;
+        --gray-500: #6b7280;
+        --gray-400: #9ca3af;
+        --gray-200: #e5e7eb;
+        --gray-100: #f3f4f6;
+        --light: #f8fafc;
+        --white: #ffffff;
+        --radius: 16px;
+        --radius-sm: 10px;
+        --radius-xs: 6px;
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 25px 80px rgba(0, 0, 0, 0.15);
+        --transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: var(--dark);
+        background: var(--white);
+        line-height: 1.65;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", sans-serif;
+        line-height: 1.15;
+      }
+
+      /* ── Layout ────────────────────────────────────────── */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .section {
+        padding: 100px 0;
+      }
+
+      /* ── Reusable Components ───────────────────────────── */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 8px 18px;
+        border-radius: 100px;
+      }
+      .badge--blue {
+        background: rgba(41, 104, 163, 0.1);
+        color: var(--blue);
+      }
+      .badge--orange {
+        background: rgba(245, 132, 31, 0.1);
+        color: var(--orange);
+      }
+      .badge--cyan {
+        background: rgba(41, 171, 226, 0.1);
+        color: var(--cyan);
+      }
+      .badge--white {
+        background: rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 16px 36px;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+      }
+      .btn--primary {
+        background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+        color: var(--white);
+        box-shadow: 0 4px 20px rgba(245, 132, 31, 0.35);
+      }
+      .btn--primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(245, 132, 31, 0.45);
+      }
+      .btn--secondary {
+        background: var(--navy);
+        color: var(--white);
+        box-shadow: 0 4px 20px rgba(26, 58, 92, 0.25);
+      }
+      .btn--secondary:hover {
+        transform: translateY(-2px);
+        background: var(--navy-dark);
+      }
+      .btn--outline {
+        background: transparent;
+        color: var(--navy);
+        border: 2px solid var(--navy);
+      }
+      .btn--outline:hover {
+        background: var(--navy);
+        color: var(--white);
+      }
+      .btn--white {
+        background: var(--white);
+        color: var(--navy);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      .btn--white:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+      }
+      .btn--sm {
+        font-size: 0.875rem;
+        padding: 12px 24px;
+      }
+
+      .section__header {
+        text-align: center;
+        max-width: 660px;
+        margin: 0 auto 64px;
+      }
+      .section__header h2 {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        font-weight: 700;
+        margin: 14px 0 16px;
+        color: var(--navy-dark);
+      }
+      .section__header p {
+        color: var(--gray-500);
+        font-size: 1.05rem;
+      }
+
+      /* ════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════ */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s;
+      }
+      .nav.scrolled {
+        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+      }
+      .nav__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 76px;
+      }
+      .nav__logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav__logo img {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .nav__logo-text {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .nav__logo-text small {
+        display: block;
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--orange);
+      }
+      .nav__links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+      }
+      .nav__links a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--gray-500);
+        transition: color 0.2s;
+      }
+      .nav__links a:hover {
+        color: var(--navy);
+      }
+      .nav__cta {
+        font-size: 0.85rem !important;
+        padding: 10px 24px !important;
+      }
+      .nav__hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        padding: 4px;
+      }
+      .nav__hamburger span {
+        display: block;
+        width: 24px;
+        height: 2.5px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--white);
+        z-index: 99;
+        padding: 32px 24px;
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+      }
+      .mobile-menu.open {
+        transform: translateX(0);
+      }
+      .mobile-menu a {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--gray-200);
+        color: var(--navy);
+      }
+      .mobile-menu .btn {
+        margin-top: 24px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* ════════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════════ */
+      .hero {
+        position: relative;
+        padding: 160px 0 100px;
+        overflow: hidden;
+        background: linear-gradient(
+          160deg,
+          #f8fafc 0%,
+          #eff6ff 40%,
+          #fff7ed 100%
+        );
+      }
+      .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .hero__content {
+        position: relative;
+        z-index: 2;
+      }
+      .hero__motto {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--orange);
+        margin-bottom: 8px;
+      }
+      .hero__title {
+        font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+        font-weight: 800;
+        color: var(--navy-dark);
+        margin: 12px 0 24px;
+      }
+      .hero__title .highlight {
+        background: linear-gradient(135deg, var(--orange), var(--cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero__subtitle {
+        font-size: 1.1rem;
+        color: var(--gray-500);
+        max-width: 520px;
+        margin-bottom: 36px;
+        line-height: 1.8;
+      }
+      .hero__actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .hero__stats {
+        display: flex;
+        gap: 36px;
+        margin-top: 48px;
+        padding-top: 28px;
+        border-top: 1px solid var(--gray-200);
+      }
+      .hero__stat h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .hero__stat h3 .accent {
+        color: var(--orange);
+      }
+      .hero__stat p {
+        font-size: 0.8rem;
+        color: var(--gray-500);
+        margin-top: 2px;
+      }
+
+      /* Hero Visual — Photo collage */
+      .hero__visual {
+        position: relative;
+        z-index: 1;
+      }
+      .hero__photo-main {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+        position: relative;
+      }
+      .hero__photo-main img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+      }
+      .hero__photo-secondary {
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        width: 220px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        border: 4px solid var(--white);
+        z-index: 2;
+      }
+      .hero__photo-secondary img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      /* Floating badge on hero visual */
+      .hero__float {
+        position: absolute;
+        background: var(--white);
+        border-radius: var(--radius-sm);
+        padding: 14px 18px;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 5;
+        animation: float 5s ease-in-out infinite;
+      }
+      .hero__float-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+      .hero__float-text {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .hero__float-sub {
+        font-size: 0.68rem;
+        color: var(--gray-500);
+      }
+      .hero__float--1 {
+        top: 10px;
+        right: -16px;
+        animation-delay: 0s;
+      }
+      .hero__float--1 .hero__float-icon {
+        background: rgba(41, 171, 226, 0.12);
+      }
+      .hero__float--2 {
+        bottom: 50px;
+        right: -20px;
+        animation-delay: 2s;
+      }
+      .hero__float--2 .hero__float-icon {
+        background: rgba(245, 132, 31, 0.12);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Decorative blobs */
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.2;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .blob--1 {
+        width: 400px;
+        height: 400px;
+        background: var(--cyan);
+        top: -100px;
+        right: -80px;
+      }
+      .blob--2 {
+        width: 300px;
+        height: 300px;
+        background: var(--orange);
+        bottom: 0;
+        left: -80px;
+      }
+
+      /* ════════════════════════════════════════════════════
+       PARTNER BAR
+       ════════════════════════════════════════════════════ */
+      .ticker {
+        padding: 40px 0;
+        border-bottom: 1px solid var(--gray-200);
+        background: var(--white);
+      }
+      .ticker__label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gray-400);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .ticker__row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .ticker__item {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--gray-400);
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      }
+      .ticker__item:hover {
+        opacity: 0.8;
+      }
+
+      /* ════════════════════════════════════════════════════
+       ABOUT / MISSION
+       ════════════════════════════════════════════════════ */
+      .about {
+        background: var(--white);
+      }
+      .about__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+      }
+      .about__visual {
+        position: relative;
+      }
+      .about__img-main {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .about__img-main img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+      }
+      .about__accent {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--orange), var(--cyan));
+        opacity: 0.15;
+        z-index: -1;
+      }
+      .about__content h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--navy-dark);
+        margin: 14px 0 20px;
+      }
+      .about__content h2 .highlight {
+        color: var(--orange);
+      }
+      .about__content p {
+        color: var(--gray-500);
+        font-size: 1rem;
+        line-height: 1.85;
+        margin-bottom: 14px;
+      }
+      .about__objectives {
+        list-style: none;
+        margin-top: 24px;
+      }
+      .about__objectives li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 12px;
+        font-size: 0.925rem;
+        color: var(--gray-700);
+      }
+      .about__objectives li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cyan), var(--blue));
+        opacity: 0.7;
+      }
+
+      /* ════════════════════════════════════════════════════
+       IMPACT NUMBERS
+       ════════════════════════════════════════════════════ */
+      .impact {
+        background: var(--navy-dark);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .impact::before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(41, 171, 226, 0.12),
+          transparent 70%
+        );
+        top: -250px;
+        right: -200px;
+      }
+      .impact__header {
+        text-align: center;
+        max-width: 660px;
+        margin: 0 auto 60px;
+      }
+      .impact__header h2 {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        margin: 14px 0 16px;
+      }
+      .impact__header h2 .highlight {
+        color: var(--orange);
+      }
+      .impact__header p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.05rem;
+      }
+      .impact__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .impact__card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        padding: 36px 24px;
+        text-align: center;
+        transition: var(--transition);
+      }
+      .impact__card:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      .impact__card h3 {
+        font-size: 2.75rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .impact__card:nth-child(1) h3 {
+        color: var(--orange);
+      }
+      .impact__card:nth-child(2) h3 {
+        color: var(--cyan);
+      }
+      .impact__card:nth-child(3) h3 {
+        color: var(--orange-light);
+      }
+      .impact__card:nth-child(4) h3 {
+        color: var(--cyan-light);
+      }
+      .impact__card p {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.6;
+      }
+
+      /* ════════════════════════════════════════════════════
+       PROGRAM STRUCTURE (4 Phases)
+       ════════════════════════════════════════════════════ */
+      .phases {
+        background: var(--light);
+      }
+      .phases__timeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        position: relative;
+      }
+      .phases__timeline::before {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 12.5%;
+        right: 12.5%;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--blue),
+          var(--cyan),
+          var(--orange),
+          var(--orange-dark)
+        );
+        border-radius: 10px;
+        z-index: 0;
+      }
+      .phase-card {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      .phase-card__number {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--white);
+        margin: 0 auto 20px;
+      }
+      .phase-card:nth-child(1) .phase-card__number {
+        background: var(--blue);
+        box-shadow: 0 4px 20px rgba(41, 104, 163, 0.3);
+      }
+      .phase-card:nth-child(2) .phase-card__number {
+        background: var(--cyan);
+        box-shadow: 0 4px 20px rgba(41, 171, 226, 0.3);
+      }
+      .phase-card:nth-child(3) .phase-card__number {
+        background: var(--orange);
+        box-shadow: 0 4px 20px rgba(245, 132, 31, 0.3);
+      }
+      .phase-card:nth-child(4) .phase-card__number {
+        background: var(--navy);
+        box-shadow: 0 4px 20px rgba(26, 58, 92, 0.3);
+      }
+      .phase-card__body {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 32px 22px 28px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: var(--transition);
+      }
+      .phase-card:hover .phase-card__body {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .phase-card__weeks {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--gray-400);
+        margin-bottom: 10px;
+      }
+      .phase-card__body h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .phase-card__body p {
+        font-size: 0.82rem;
+        color: var(--gray-500);
+        line-height: 1.7;
+      }
+
+      /* ════════════════════════════════════════════════════
+       SKILL TRACKS
+       ════════════════════════════════════════════════════ */
+      .tracks {
+        background: var(--white);
+      }
+      .tracks__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .track-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        border: 1px solid var(--gray-200);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      .track-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: transparent;
+      }
+      .track-card__top {
+        height: 6px;
+      }
+      .track-card:nth-child(1) .track-card__top {
+        background: linear-gradient(90deg, var(--blue), var(--cyan));
+      }
+      .track-card:nth-child(2) .track-card__top {
+        background: linear-gradient(90deg, var(--cyan), var(--blue));
+      }
+      .track-card:nth-child(3) .track-card__top {
+        background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+      }
+      .track-card__body {
+        padding: 32px 26px 28px;
+      }
+      .track-card__icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      .track-card:nth-child(1) .track-card__icon {
+        background: rgba(41, 104, 163, 0.1);
+      }
+      .track-card:nth-child(2) .track-card__icon {
+        background: rgba(41, 171, 226, 0.1);
+      }
+      .track-card:nth-child(3) .track-card__icon {
+        background: rgba(245, 132, 31, 0.1);
+      }
+      .track-card__body h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .track-card__body p {
+        font-size: 0.88rem;
+        color: var(--gray-500);
+        line-height: 1.75;
+        margin-bottom: 18px;
+      }
+      .track-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .track-card__tag {
+        font-size: 0.68rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        background: var(--light);
+        color: var(--gray-500);
+        border-radius: 100px;
+      }
+
+      .tracks__grid--bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+      }
+      .tracks__grid--bottom .track-card:nth-child(1) .track-card__top {
+        background: linear-gradient(90deg, var(--navy), var(--blue));
+      }
+      .tracks__grid--bottom .track-card:nth-child(2) .track-card__top {
+        background: linear-gradient(90deg, var(--cyan), var(--orange));
+      }
+      .tracks__grid--bottom .track-card:nth-child(1) .track-card__icon {
+        background: rgba(26, 58, 92, 0.1);
+      }
+      .tracks__grid--bottom .track-card:nth-child(2) .track-card__icon {
+        background: linear-gradient(
+          135deg,
+          rgba(41, 171, 226, 0.1),
+          rgba(245, 132, 31, 0.1)
+        );
+      }
+
+      /* ════════════════════════════════════════════════════
+       WHY AIGNITE
+       ════════════════════════════════════════════════════ */
+      .features {
+        background: linear-gradient(170deg, #eff6ff 0%, #fff7ed 100%);
+      }
+      .features__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .feature-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 36px 26px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .feature-card__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+      }
+      .feature-card:nth-child(odd) .feature-card__icon {
+        background: rgba(41, 104, 163, 0.1);
+      }
+      .feature-card:nth-child(even) .feature-card__icon {
+        background: rgba(245, 132, 31, 0.1);
+      }
+      .feature-card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+      .feature-card p {
+        font-size: 0.88rem;
+        color: var(--gray-500);
+        line-height: 1.75;
+      }
+
+      /* ════════════════════════════════════════════════════
+       HUB & COMMUNITY
+       ════════════════════════════════════════════════════ */
+      .hub {
+        background: var(--white);
+      }
+      .hub__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .hub__content h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--navy-dark);
+        margin: 14px 0 20px;
+      }
+      .hub__content h2 .highlight {
+        color: var(--cyan);
+      }
+      .hub__content > p {
+        color: var(--gray-500);
+        font-size: 1rem;
+        line-height: 1.85;
+        margin-bottom: 28px;
+      }
+      .hub__features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .hub__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+        background: var(--light);
+        border-radius: var(--radius-sm);
+        transition: var(--transition);
+      }
+      .hub__feature:hover {
+        background: var(--gray-100);
+      }
+      .hub__feature-icon {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(41, 171, 226, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+      .hub__feature h4 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 2px;
+      }
+      .hub__feature p {
+        font-size: 0.78rem;
+        color: var(--gray-500);
+        line-height: 1.55;
+      }
+      .hub__visual-card {
+        background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+        border-radius: 24px;
+        padding: 48px 36px;
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .hub__visual-card::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(245, 132, 31, 0.15),
+          transparent 70%
+        );
+        bottom: -100px;
+        right: -80px;
+      }
+      .hub__visual-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+        position: relative;
+      }
+      .hub__events {
+        list-style: none;
+        position: relative;
+      }
+      .hub__events li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .hub__events li:last-child {
+        border-bottom: none;
+      }
+      .hub__events li span {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      /* ════════════════════════════════════════════════════
+       TESTIMONIALS
+       ════════════════════════════════════════════════════ */
+      .testimonials {
+        background: var(--light);
+      }
+      .testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .testimonial-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 36px 28px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: var(--transition);
+      }
+      .testimonial-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+      .testimonial__stars {
+        color: var(--orange);
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+      }
+      .testimonial__quote {
+        font-size: 0.92rem;
+        color: var(--gray-700);
+        line-height: 1.8;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      .testimonial__author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .testimonial__avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: var(--white);
+      }
+      .testimonial-card:nth-child(1) .testimonial__avatar {
+        background: var(--blue);
+      }
+      .testimonial-card:nth-child(2) .testimonial__avatar {
+        background: var(--orange);
+      }
+      .testimonial-card:nth-child(3) .testimonial__avatar {
+        background: var(--cyan);
+      }
+      .testimonial__name {
+        font-weight: 600;
+        font-size: 0.88rem;
+        color: var(--navy);
+      }
+      .testimonial__role {
+        font-size: 0.78rem;
+        color: var(--gray-500);
+      }
+
+      /* ════════════════════════════════════════════════════
+       CTA
+       ════════════════════════════════════════════════════ */
+      .cta {
+        background: linear-gradient(
+          135deg,
+          var(--navy-dark) 0%,
+          #0a1628 50%,
+          var(--navy-dark) 100%
+        );
+        color: var(--white);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta::before,
+      .cta::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.15;
+      }
+      .cta::before {
+        width: 500px;
+        height: 500px;
+        background: var(--cyan);
+        top: -200px;
+        left: -100px;
+      }
+      .cta::after {
+        width: 400px;
+        height: 400px;
+        background: var(--orange);
+        bottom: -150px;
+        right: -100px;
+      }
+      .cta__content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .cta__content h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        margin: 14px 0 20px;
+      }
+      .cta__content p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 1.05rem;
+        margin-bottom: 36px;
+        line-height: 1.8;
+      }
+      .cta__actions {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta__note {
+        margin-top: 24px;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* ════════════════════════════════════════════════════
+       MODAL
+       ════════════════════════════════════════════════════ */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(10px);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+      }
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 48px 40px;
+        max-width: 520px;
+        width: 92%;
+        position: relative;
+        transform: translateY(20px) scale(0.97);
+        transition: transform 0.3s;
+      }
+      .modal-overlay.active .modal {
+        transform: translateY(0) scale(1);
+      }
+      .modal__close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: var(--light);
+        cursor: pointer;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        color: var(--gray-500);
+      }
+      .modal__close:hover {
+        background: var(--gray-200);
+      }
+      .modal h2 {
+        font-size: 1.4rem;
+        color: var(--navy-dark);
+        margin-bottom: 4px;
+      }
+      .modal > p {
+        color: var(--gray-500);
+        font-size: 0.88rem;
+        margin-bottom: 28px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--navy);
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 13px 16px;
+        border: 1.5px solid var(--gray-200);
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+        font-family: inherit;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        background: var(--white);
+        color: var(--dark);
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(41, 104, 163, 0.1);
+      }
+      .form-submit {
+        width: 100%;
+        margin-top: 8px;
+      }
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .form-success.show {
+        display: block;
+      }
+      .form-success__icon {
+        width: 64px;
+        height: 64px;
+        background: rgba(41, 171, 226, 0.12);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 16px;
+      }
+      .form-success h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: var(--navy);
+      }
+      .form-success p {
+        color: var(--gray-500);
+        font-size: 0.88rem;
+        line-height: 1.7;
+      }
+
+      /* ════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════ */
+      .footer {
+        background: var(--dark-2);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 64px 0 32px;
+      }
+      .footer__grid {
+        display: grid;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+      .footer__brand .nav__logo {
+        margin-bottom: 14px;
+      }
+      .footer__brand .nav__logo-text {
+        color: var(--white);
+      }
+      .footer__brand > p {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        max-width: 320px;
+      }
+      .footer__col h4 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 18px;
+        font-size: 0.9rem;
+      }
+      .footer__col a {
+        display: block;
+        font-size: 0.85rem;
+        padding: 5px 0;
+        transition: color 0.2s;
+      }
+      .footer__col a:hover {
+        color: var(--orange);
+      }
+      .footer__bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.78rem;
+      }
+      .footer__socials {
+        display: flex;
+        gap: 12px;
+      }
+      .footer__socials a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .footer__socials a:hover {
+        background: var(--orange);
+        color: var(--white);
+      }
+
+      /* ════════════════════════════════════════════════════
+       ANIMATIONS
+       ════════════════════════════════════════════════════ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-d1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-d2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-d3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-d4 {
+        transition-delay: 0.35s;
+      }
+      .reveal-d5 {
+        transition-delay: 0.4s;
+      }
+
+      /* ════════════════════════════════════════════════════
+       RESPONSIVE
+       ════════════════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .tracks__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .tracks__grid--bottom {
+          grid-template-columns: 1fr;
+        }
+        .phases__timeline {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+        }
+        .phases__timeline::before {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .section {
+          padding: 72px 0;
+        }
+        .nav__links {
+          display: none;
+        }
+        .nav__hamburger {
+          display: flex;
+        }
+        .hero__grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .hero__visual {
+          order: -1;
+        }
+        .hero {
+          padding: 120px 0 72px;
+        }
+        .hero__stats {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+        .hero__photo-secondary {
+          width: 160px;
+          bottom: -20px;
+          left: -10px;
+        }
+        .about__grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .impact__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .phases__timeline {
+          grid-template-columns: 1fr;
+        }
+        .tracks__grid {
+          grid-template-columns: 1fr;
+        }
+        .tracks__grid--bottom {
+          grid-template-columns: 1fr;
+        }
+        .features__grid {
+          grid-template-columns: 1fr;
+        }
+        .hub__grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .hub__features {
+          grid-template-columns: 1fr;
+        }
+        .testimonials__grid {
+          grid-template-columns: 1fr;
+        }
+        .footer__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer__bottom {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+        .hero__float--2 {
+          display: none;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero__stats {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .impact__grid {
+          grid-template-columns: 1fr;
+        }
+        .footer__grid {
+          grid-template-columns: 1fr;
+        }
+        .cta__actions {
+          flex-direction: column;
+          align-items: center;
+        }
+        .modal {
+          padding: 36px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════ NAVIGATION ═══════════ -->
+    <nav class="nav" id="nav">
+      <div class="container nav__inner">
+        <a href="#" class="nav__logo">
+          <img
+            src="images/logo.png"
+            alt="Aignite Logo"
+            onerror="
+              this.onerror = null;
+              this.src =
+                'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22%3E%3Ccircle cx=%2224%22 cy=%2224%22 r=%2222%22 fill=%22none%22 stroke=%22%231A3A5C%22 stroke-width=%223%22/%3E%3Ctext x=%2224%22 y=%2230%22 text-anchor=%22middle%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%231A3A5C%22%3EA%3C/text%3E%3C/svg%3E';
+            "
+          />
+          <div class="nav__logo-text">
+            Aignite
+            <small>Tech Solutions Hub</small>
+          </div>
+        </a>
+        <div class="nav__links">
+          <a href="#about">About</a>
+          <a href="#programs">Programs</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#hub">The Hub</a>
+          <a href="#testimonials">Stories</a>
+          <button class="btn btn--primary nav__cta" data-modal>
+            Enroll Now →
+          </button>
+        </div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#programs" class="mobile-link">Programs</a>
+      <a href="#curriculum" class="mobile-link">Curriculum</a>
+      <a href="#hub" class="mobile-link">The Hub</a>
+      <a href="#testimonials" class="mobile-link">Stories</a>
+      <button class="btn btn--primary mobile-link" data-modal>
+        Enroll Now →
+      </button>
+    </div>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="hero">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="badge badge--orange">📍 Winneba, Ghana</span>
+          <p class="hero__motto">
+            Training Youth to Acquire Digital Skills in Solving Real World
+            Problems
+          </p>
+          <h1 class="hero__title">
+            Powering Ghana's <span class="highlight">Digital Future</span> from
+            Winneba
+          </h1>
+          <p class="hero__subtitle">
+            Aignite Tech Solutions Hub equips talented young Ghanaians with
+            globally competitive digital skills and connects them to remote work
+            &amp; outsourcing opportunities — without leaving their community.
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary" data-modal>
+              Apply Now — Free to Start →
+            </button>
+            <a href="#programs" class="btn btn--outline"
+              >Explore Skill Tracks</a
+            >
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <h3>180<span class="accent">+</span></h3>
+              <p>Students / Year</p>
+            </div>
+            <div class="hero__stat">
+              <h3>65<span class="accent">%</span></h3>
+              <p>Placement Target</p>
+            </div>
+            <div class="hero__stat">
+              <h3>5</h3>
+              <p>Skill Tracks</p>
+            </div>
+            <div class="hero__stat">
+              <h3>6</h3>
+              <p>Cohorts / Year</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual reveal reveal-d2">
+          <div class="hero__photo-main">
+            <img
+              src="images/team-1.jpg"
+              alt="Aignite students and mentor in Winneba"
+              onerror="this.onerror=null;this.style.cssText='height:420px;background:linear-gradient(135deg,#1A3A5C,#29ABE2);display:flex;align-items:center;justify-content:center;';this.outerHTML='<div style=&quot;height:420px;background:linear-gradient(135deg,#1A3A5C 0%,#2968A3 50%,#29ABE2 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:white;font-family:Space Grotesk,sans-serif;&quot;><span style=&quot;font-size:4rem;&quot;>💻</span><span style=&quot;font-size:1.4rem;font-weight:700;&quot;>Code. Create. Conquer.</span><span style=&quot;font-size:.85rem;opacity:.7;&quot;>Aignite Tech Solutions Hub · Winneba</span></div>';"
+            />
+          </div>
+          <div class="hero__photo-secondary">
+            <img src="images/team-2.jpg" alt="Aignite students collaborating"
+              onerror="this.onerror=null;this.outerHTML='<div style=&quot;height:160px;background:linear-gradient(135deg,#F5841F,#29ABE2);display:flex;align-items:center;justify-content:center;color:white;font-size:2.5rem;&quot;>🚀</div>';"
+            />
+          </div>
+          <div class="hero__float hero__float--1">
+            <div class="hero__float-icon">🎓</div>
+            <div>
+              <div class="hero__float-text">6-Month Program</div>
+              <div class="hero__float-sub">Foundations → Career Ready</div>
+            </div>
+          </div>
+          <div class="hero__float hero__float--2">
+            <div class="hero__float-icon">🌍</div>
+            <div>
+              <div class="hero__float-text">Remote Careers</div>
+              <div class="hero__float-sub">Work globally, live locally</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PARTNER BAR ═══════════ -->
+    <div class="ticker">
+      <p class="ticker__label">
+        Building industry partnerships for real-world impact
+      </p>
+      <div class="ticker__row">
+        <span class="ticker__item">Start-ups</span>
+        <span class="ticker__item">•</span>
+        <span class="ticker__item">SMEs</span>
+        <span class="ticker__item">•</span>
+        <span class="ticker__item">Outsourcing Platforms</span>
+        <span class="ticker__item">•</span>
+        <span class="ticker__item">Tech Companies</span>
+        <span class="ticker__item">•</span>
+        <span class="ticker__item">Freelance Networks</span>
+      </div>
+    </div>
+
+    <!-- ═══════════ ABOUT / MISSION ═══════════ -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <div class="about__visual reveal">
+          <div class="about__img-main">
+            <img src="images/team-2.jpg" alt="Aignite community in Winneba"
+              onerror="this.onerror=null;this.outerHTML='<div style=&quot;height:380px;background:linear-gradient(135deg,#0F2440 0%,#1A3A5C 50%,#F5841F 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:white;font-family:Space Grotesk,sans-serif;&quot;><span style=&quot;font-size:3.5rem;&quot;>🇬🇭</span><span style=&quot;font-size:1.2rem;font-weight:700;&quot;>Empowering Winneba&apos;s Youth</span><span style=&quot;font-size:.8rem;opacity:.7;&quot;>Building Ghana&apos;s digital future</span></div>';"
+            />
+          </div>
+          <div class="about__accent"></div>
+        </div>
+        <div class="about__content reveal reveal-d2">
+          <span class="badge badge--blue">Our Mission</span>
+          <h2>
+            Closing the <span class="highlight">skills gap</span>, one cohort at
+            a time
+          </h2>
+          <p>
+            Aignite is a Tech Education &amp; Outsourcing Hub based in Winneba,
+            Ghana — designed to train talented youth in globally competitive
+            digital skills and connect them to remote work opportunities.
+          </p>
+          <p>
+            We address youth unemployment and the growing digital skills gap by
+            providing practical, industry-aligned training. By creating pathways
+            for remote employment and freelance opportunities, we reduce the
+            migration of skilled youth to larger cities while strengthening the
+            local digital economy.
+          </p>
+          <ul class="about__objectives">
+            <li>Train 180 students through 6 cohorts of 30 annually</li>
+            <li>65%+ graduate placement in remote work within 3 months</li>
+            <li>Establish 5+ industry partnerships in year one</li>
+            <li>Position Winneba as a growing regional tech hub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ IMPACT NUMBERS ═══════════ -->
+    <section class="impact section" id="impact">
+      <div class="container">
+        <div class="impact__header reveal">
+          <span class="badge badge--white">The Challenge</span>
+          <h2>
+            Ghana's youth deserve
+            <span class="highlight">real opportunity</span>
+          </h2>
+          <p>The talent is here. The demand is global. We bridge the gap.</p>
+        </div>
+        <div class="impact__grid">
+          <div class="impact__card reveal reveal-d1">
+            <h3>12%</h3>
+            <p>Youth unemployment rate in Ghana</p>
+          </div>
+          <div class="impact__card reveal reveal-d2">
+            <h3>4M+</h3>
+            <p>Global tech talent shortage</p>
+          </div>
+          <div class="impact__card reveal reveal-d3">
+            <h3>60%</h3>
+            <p>Of Ghana's population is under 25</p>
+          </div>
+          <div class="impact__card reveal reveal-d4">
+            <h3>$3B+</h3>
+            <p>Africa's growing tech ecosystem value</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CURRICULUM / 4 PHASES ═══════════ -->
+    <section class="phases section" id="curriculum">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="badge badge--blue">6-Month Curriculum</span>
+          <h2>A structured path from beginner to professional</h2>
+          <p>
+            Four progressive phases that build skills, confidence, and a
+            professional portfolio — designed with industry standards.
+          </p>
+        </div>
+        <div class="phases__timeline">
+          <div class="phase-card reveal reveal-d1">
+            <div class="phase-card__number">01</div>
+            <div class="phase-card__body">
+              <div class="phase-card__weeks">Weeks 1 – 4</div>
+              <h3>Foundations</h3>
+              <p>
+                Digital literacy, professional communication, remote
+                collaboration tools, and an introduction to AI. Builds the base
+                for specialization.
+              </p>
+            </div>
+          </div>
+          <div class="phase-card reveal reveal-d2">
+            <div class="phase-card__number">02</div>
+            <div class="phase-card__body">
+              <div class="phase-card__weeks">Weeks 5 – 12</div>
+              <h3>Core Skills Training</h3>
+              <p>
+                Specialize in your chosen track with hands-on exercises,
+                simulations, and industry-based assignments across 8 intensive
+                weeks.
+              </p>
+            </div>
+          </div>
+          <div class="phase-card reveal reveal-d3">
+            <div class="phase-card__number">03</div>
+            <div class="phase-card__body">
+              <div class="phase-card__weeks">Weeks 13 – 18</div>
+              <h3>Applied Industry Projects</h3>
+              <p>
+                Work on real projects from start-ups, SMEs, and partner
+                organizations. Develop your professional portfolio solving real
+                problems.
+              </p>
+            </div>
+          </div>
+          <div class="phase-card reveal reveal-d4">
+            <div class="phase-card__number">04</div>
+            <div class="phase-card__body">
+              <div class="phase-card__weeks">Weeks 19 – 24</div>
+              <h3>Capstone &amp; Career Readiness</h3>
+              <p>
+                Complete a capstone project, build your portfolio, optimize
+                LinkedIn, set up freelance profiles, and prepare for interviews.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SKILL TRACKS ═══════════ -->
+    <section class="tracks section" id="programs">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="badge badge--orange">Skill Tracks</span>
+          <h2>Five high-demand specializations</h2>
+          <p>
+            Choose your path. Each track is designed for real-world employment
+            with project-based, hands-on training.
+          </p>
+        </div>
+        <div class="tracks__grid">
+          <div class="track-card reveal reveal-d1">
+            <div class="track-card__top"></div>
+            <div class="track-card__body">
+              <div class="track-card__icon">🎨</div>
+              <h3>UI/UX Design</h3>
+              <p>
+                Create beautiful, user-centered digital experiences — from user
+                research and wireframes to polished prototypes in Figma.
+              </p>
+              <div class="track-card__tags">
+                <span class="track-card__tag">Figma</span>
+                <span class="track-card__tag">User Research</span>
+                <span class="track-card__tag">Prototyping</span>
+                <span class="track-card__tag">Design Systems</span>
+              </div>
+            </div>
+          </div>
+          <div class="track-card reveal reveal-d2">
+            <div class="track-card__top"></div>
+            <div class="track-card__body">
+              <div class="track-card__icon">🌐</div>
+              <h3>Front-End Web Development</h3>
+              <p>
+                Master modern web technologies from HTML, CSS, and JavaScript to
+                building responsive, production-ready applications.
+              </p>
+              <div class="track-card__tags">
+                <span class="track-card__tag">HTML / CSS</span>
+                <span class="track-card__tag">JavaScript</span>
+                <span class="track-card__tag">React</span>
+                <span class="track-card__tag">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+          <div class="track-card reveal reveal-d3">
+            <div class="track-card__top"></div>
+            <div class="track-card__body">
+              <div class="track-card__icon">📱</div>
+              <h3>Digital Marketing</h3>
+              <p>
+                Master SEO, social media strategy, paid advertising, and content
+                marketing. Help businesses thrive in the digital age.
+              </p>
+              <div class="track-card__tags">
+                <span class="track-card__tag">SEO</span>
+                <span class="track-card__tag">Social Media</span>
+                <span class="track-card__tag">Google Ads</span>
+                <span class="track-card__tag">Content Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tracks__grid--bottom">
+          <div class="track-card reveal reveal-d1">
+            <div class="track-card__top"></div>
+            <div class="track-card__body">
+              <div class="track-card__icon">💼</div>
+              <h3>Virtual Assistant Services</h3>
+              <p>
+                Build professional skills in remote administration, scheduling,
+                email management, CRM tools, and client communication.
+              </p>
+              <div class="track-card__tags">
+                <span class="track-card__tag">Admin Tools</span>
+                <span class="track-card__tag">CRM</span>
+                <span class="track-card__tag">Scheduling</span>
+                <span class="track-card__tag">Client Comms</span>
+              </div>
+            </div>
+          </div>
+          <div class="track-card reveal reveal-d2">
+            <div class="track-card__top"></div>
+            <div class="track-card__body">
+              <div class="track-card__icon">🤖</div>
+              <h3>AI Learning &amp; AI-Assisted Productivity</h3>
+              <p>
+                Harness the power of AI tools for productivity, content
+                generation, data analysis, and workflow automation.
+              </p>
+              <div class="track-card__tags">
+                <span class="track-card__tag">AI Tools</span>
+                <span class="track-card__tag">Prompt Engineering</span>
+                <span class="track-card__tag">Automation</span>
+                <span class="track-card__tag">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ WHY AIGNITE ═══════════ -->
+    <section class="features section" id="why-us">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="badge badge--cyan">Why Aignite?</span>
+          <h2>More than a bootcamp — a launchpad</h2>
+          <p>
+            We don't just teach skills. We build careers, forge partnerships,
+            and transform communities.
+          </p>
+        </div>
+        <div class="features__grid">
+          <div class="feature-card reveal reveal-d1">
+            <div class="feature-card__icon">🛠</div>
+            <h3>Project-Based Learning</h3>
+            <p>
+              Work on real projects from start-ups and SMEs — not toy exercises.
+              Graduate with a professional portfolio that proves your skills.
+            </p>
+          </div>
+          <div class="feature-card reveal reveal-d2">
+            <div class="feature-card__icon">🤝</div>
+            <h3>Industry Partnerships</h3>
+            <p>
+              Access mentorship, guest lectures, and capstone collaborations
+              with tech companies and outsourcing platforms.
+            </p>
+          </div>
+          <div class="feature-card reveal reveal-d3">
+            <div class="feature-card__icon">🌍</div>
+            <h3>Remote Job Placement</h3>
+            <p>
+              Get connected to freelance platforms, outsourcing contracts, and
+              industry referrals. Work globally from Winneba.
+            </p>
+          </div>
+          <div class="feature-card reveal reveal-d1">
+            <div class="feature-card__icon">💰</div>
+            <h3>Success-Based Model</h3>
+            <p>
+              Our revenue model is tied to your success. When graduates earn,
+              Aignite earns — aligning our incentives with your outcomes.
+            </p>
+          </div>
+          <div class="feature-card reveal reveal-d2">
+            <div class="feature-card__icon">📜</div>
+            <h3>Rigorous Assessment</h3>
+            <p>
+              80% attendance, 3 practical projects, and a 70%+ competency score
+              ensure graduates are truly industry-ready.
+            </p>
+          </div>
+          <div class="feature-card reveal reveal-d3">
+            <div class="feature-card__icon">🚀</div>
+            <h3>Career Readiness Training</h3>
+            <p>
+              CV optimization, LinkedIn profiles, freelance platform setup, and
+              interview preparation built into the curriculum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ HUB & COMMUNITY ═══════════ -->
+    <section class="hub section" id="hub">
+      <div class="container hub__grid">
+        <div class="hub__content reveal">
+          <span class="badge badge--cyan">Hub &amp; Community</span>
+          <h2>
+            A home for <span class="highlight">innovation</span> in Winneba
+          </h2>
+          <p>
+            Our physical hub provides a collaborative learning environment that
+            supports skill development, innovation, and networking — available
+            to trainees and graduates alike.
+          </p>
+          <div class="hub__features">
+            <div class="hub__feature">
+              <div class="hub__feature-icon">🖥️</div>
+              <div>
+                <h4>Computer Lab</h4>
+                <p>High-speed internet &amp; workstations</p>
+              </div>
+            </div>
+            <div class="hub__feature">
+              <div class="hub__feature-icon">🏢</div>
+              <div>
+                <h4>Co-Working Space</h4>
+                <p>For freelancers &amp; graduates</p>
+              </div>
+            </div>
+            <div class="hub__feature">
+              <div class="hub__feature-icon">👥</div>
+              <div>
+                <h4>Training Room</h4>
+                <p>40–50 seat capacity</p>
+              </div>
+            </div>
+            <div class="hub__feature">
+              <div class="hub__feature-icon">🤝</div>
+              <div>
+                <h4>Meeting Rooms</h4>
+                <p>Collaboration &amp; client calls</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hub__visual reveal reveal-d2">
+          <div class="hub__visual-card">
+            <h3>Community Events 🎉</h3>
+            <ul class="hub__events">
+              <li><span>🎤</span> Monthly Tech Talks with industry experts</li>
+              <li><span>👩‍💻</span> Peer Learning Groups &amp; study sessions</li>
+              <li><span>🏆</span> Hackathons &amp; Innovation Challenges</li>
+              <li><span>🧑‍🏫</span> Mentorship Sessions with professionals</li>
+              <li><span>🌐</span> Networking events &amp; career fairs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIALS ═══════════ -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="badge badge--orange">Success Stories</span>
+          <h2>Transforming lives, building futures</h2>
+          <p>
+            Hear from young Ghanaians whose careers were launched through
+            Aignite's programs.
+          </p>
+        </div>
+        <div class="testimonials__grid">
+          <div class="testimonial-card reveal reveal-d1">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__quote">
+              "Before Aignite, I had no idea how to turn my creativity into a
+              career. The UI/UX track gave me real client projects and a
+              portfolio that landed me freelance work within weeks of
+              graduating."
+            </p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">AA</div>
+              <div>
+                <div class="testimonial__name">Ama Asante</div>
+                <div class="testimonial__role">UI/UX Designer, Freelance</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-d2">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__quote">
+              "The structured curriculum and mentorship made all the difference.
+              I went from zero coding knowledge to building responsive websites.
+              Now I work remotely for a start-up in Accra."
+            </p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">KM</div>
+              <div>
+                <div class="testimonial__name">Kwame Mensah</div>
+                <div class="testimonial__role">Front-End Developer, Remote</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-d3">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__quote">
+              "I didn't have to move to Accra to find opportunity. Aignite's
+              digital marketing track and career support helped me start earning
+              from Winneba. This program changes lives."
+            </p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">EO</div>
+              <div>
+                <div class="testimonial__name">Efua Owusu</div>
+                <div class="testimonial__role">
+                  Digital Marketing Specialist
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="cta section" id="enroll">
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="badge badge--white"
+            >🚀 Applications Open — Next Cohort Starting Soon</span
+          >
+          <h2>Your tech career starts right here in Winneba</h2>
+          <p>
+            Join 30 talented young Ghanaians in the next cohort. No prior tech
+            experience required — just the drive to learn, build, and grow.
+            Apply today and take the first step toward a globally competitive
+            digital career.
+          </p>
+          <div class="cta__actions">
+            <button
+              class="btn btn--primary"
+              data-modal
+              style="font-size: 1.1rem; padding: 18px 44px"
+            >
+              Apply Now — It's Free →
+            </button>
+            <a href="#programs" class="btn btn--white">View Skill Tracks</a>
+          </div>
+          <p class="cta__note">
+            6-month program · 5 skill tracks · Cohorts of 30 students · Career
+            placement support
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="#" class="nav__logo">
+              <img
+                src="images/logo.png"
+                alt="Aignite"
+                style="height: 44px; width: 44px; border-radius: 50%"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="nav__logo-text" style="color: var(--white)">
+                Aignite
+                <small>Tech Solutions Hub</small>
+              </div>
+            </a>
+            <p>
+              Training youth to acquire digital skills in solving real world
+              problems. Based in Winneba, impacting Ghana and beyond.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>Skill Tracks</h4>
+            <a href="#programs">UI/UX Design</a>
+            <a href="#programs">Front-End Development</a>
+            <a href="#programs">Digital Marketing</a>
+            <a href="#programs">Virtual Assistant</a>
+            <a href="#programs">AI Learning</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#about">About Us</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#hub">The Hub</a>
+            <a href="#testimonials">Success Stories</a>
+          </div>
+          <div class="footer__col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@aignite.tech">hello@aignite.tech</a>
+            <a href="#">Winneba, Central Region, Ghana</a>
+            <a href="#">+233 XX XXX XXXX</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 Aignite Tech Solutions Hub. All rights reserved.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Twitter/X">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══════════ ENROLLMENT MODAL ═══════════ -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <button class="modal__close" id="modalClose">✕</button>
+        <div id="enrollForm">
+          <h2>Start Your Journey 🚀</h2>
+          <p>
+            Apply for the next cohort. It's free — no commitment until you're
+            accepted.
+          </p>
+          <form id="applicationForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="e.g. Kofi Asante"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="+233 XX XXX XXXX"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="program">Preferred Skill Track</label>
+              <select id="program" required>
+                <option value="" disabled selected>Select a skill track</option>
+                <option value="ui-ux">UI/UX Design</option>
+                <option value="frontend">Front-End Web Development</option>
+                <option value="digital-marketing">Digital Marketing</option>
+                <option value="virtual-assistant">
+                  Virtual Assistant Services
+                </option>
+                <option value="ai-learning">
+                  AI Learning & AI-Assisted Productivity
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="experience">Prior Tech Experience</label>
+              <select id="experience">
+                <option value="" disabled selected>Select your level</option>
+                <option value="none">No experience — complete beginner</option>
+                <option value="some">Some self-taught experience</option>
+                <option value="moderate">
+                  Moderate — taken online courses
+                </option>
+                <option value="experienced">
+                  Experienced — looking to specialize
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary form-submit">
+              Submit Application →
+            </button>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success__icon">✅</div>
+          <h3>Application Received!</h3>
+          <p>
+            Thank you for applying to Aignite Tech Solutions Hub. We'll review
+            your application and reach out within 48 hours. Welcome to the
+            beginning of your digital career!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════ SCRIPTS ═══════════ -->
+    <script>
+      // ── Smooth scroll ──
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#" || this.hasAttribute("data-modal")) return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target)
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      // ── Nav scroll effect ──
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // ── Mobile menu ──
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let menuOpen = false;
+
+      hamburger.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle("open", menuOpen);
+        const spans = hamburger.querySelectorAll("span");
+        if (menuOpen) {
+          spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
+        } else {
+          spans.forEach((s) => {
+            s.style.transform = "";
+            s.style.opacity = "";
+          });
+        }
+      });
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          hamburger.querySelectorAll("span").forEach((s) => {
+            s.style.transform = "";
+            s.style.opacity = "";
+          });
+        });
+      });
+
+      // ── Modal ──
+      const modalOverlay = document.getElementById("modalOverlay");
+      const modalClose = document.getElementById("modalClose");
+      const enrollForm = document.getElementById("enrollForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      document.querySelectorAll("[data-modal]").forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          modalOverlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      function closeModal() {
+        modalOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          enrollForm.style.display = "";
+          formSuccess.classList.remove("show");
+          document.getElementById("applicationForm").reset();
+        }, 300);
+      }
+
+      modalClose.addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      // ── Form submit ──
+      document
+        .getElementById("applicationForm")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          enrollForm.style.display = "none";
+          formSuccess.classList.add("show");
+        });
+
+      // ── Scroll reveal ──
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // ── Counter animation ──
+      function animateValue(el, start, end, suffix, duration) {
+        let startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.innerHTML =
+            Math.floor(eased * (end - start) + start) +
+            '<span class="accent">' +
+            suffix +
+            "</span>";
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const stats = entry.target.querySelectorAll(".hero__stat h3");
+              stats.forEach((stat) => {
+                const text = stat.textContent;
+                const num = parseInt(text);
+                const suffix = text.replace(/[0-9]/g, "");
+                if (!isNaN(num)) animateValue(stat, 0, num, suffix, 1500);
+              });
+              statsObserver.disconnect();
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      const heroStats = document.querySelector(".hero__stats");
+      if (heroStats) statsObserver.observe(heroStats);
+    </script>
+  </body>
+</html>
