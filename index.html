@@ -1884,7 +1884,13 @@
             <img
               src="images/team-2.jpg"
               alt="Aignite community in Winneba"
-              onerror='this.onerror=null;this.outerHTML=&apos;<div style="height:380px;background:linear-gradient(135deg,#0F2440 0%,#1A3A5C 50%,#F5841F 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:white;font-family:Space Grotesk,sans-serif;"><span style="font-size:3.5rem;">🇬🇭</span><span style="font-size:1.2rem;font-weight:700;">Empowering Winneba&apos;s Youth</span><span style="font-size:.8rem;opacity:.7;">Building Ghana&apos;s digital future</span></div>&apos;;'
+              onerror="
+                this.onerror = null;
+                this.style.cssText =
+                  'height:380px;background:linear-gradient(135deg,#0F2440,#1A3A5C,#F5841F);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:white;font-family:Space Grotesk,sans-serif;';
+                this.outerHTML =
+                  '<div style=&quot;height:380px;background:linear-gradient(135deg,#0F2440,#1A3A5C,#F5841F);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:white;font-family:Space Grotesk,sans-serif;&quot;><span style=&quot;font-size:3.5rem;&quot;>🇬🇭</span><span style=&quot;font-size:1.2rem;font-weight:700;&quot;>Empowering Winneba\u0027s Youth</span><span style=&quot;font-size:.8rem;opacity:.7;&quot;>Building Ghana\u0027s digital future</span></div>';
+              "
             />
           </div>
           <div class="about__accent"></div>
